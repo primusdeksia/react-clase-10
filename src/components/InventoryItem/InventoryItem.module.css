@@ -1,0 +1,18 @@
+.listItem {
+    border-bottom: 1px solid #ddd;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    max-width: 75%;
+    min-height: 2rem;
+}
+
+.listItem a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.checked {
+    font-weight: bolder;
+}

@@ -1,0 +1,37 @@
+.App {
+    background-color: #eeeeee;
+    color: #aaa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+.topBar {
+    align-items: center;
+    background-color: #28293d;
+    border-bottom: 3px solid #38393d;
+    display: flex;
+    justify-content: space-between;
+    min-height: 2rem;
+    padding: 0.5rem;
+}
+
+.topBar ul {
+    display: flex;
+    justify-content: left;
+}
+
+.topBar ul li {
+    color: whitesmoke;
+    list-style-type: none;  
+    margin-right: 1rem;
+}
+
+.topBar ul li a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.card-title.text-center h3 {
+    padding-top: 20px;
+}

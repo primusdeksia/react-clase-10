@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { Inventory } from './components/Inventory/Inventory';
+import Navbar from './components/Navbar/Navbar';
+import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import { Tareas } from './components/Tareas';
+import { Tarea } from './components/Tarea';
+import { Provider } from 'react-redux' 
+import store from './components/redux/store';
 
-function App() {
+
+const App = () => {
+
+  const [showed, setShowed] = useState(false)
+
+  const [data, setData] = useState([])
+
+  const showHandler = () => setShowed(!showed)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <Routes>
+        <Route element={<Navbar data={data} setData={setData} showHandler={showHandler} />} >
+          <Route index path='/' element={<h2>Bienvenidos</h2>} />
+          <Route path='/tareas' element={<Tareas data={data} setData={setData} />} />
+          <Route path='/tareas/:id' element={<Tarea />} />
+          <Route path='*' element={<h3>Página no encontrada</h3>} />
+        </Route>
+      </Routes>
+    </Provider>
   );
 }
 
